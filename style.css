@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+#clock{
+    margin-top: 200px !important;
+    height: 150px;
+    width: 300px;
+    background-color: black;
+    border: 3px solid blueviolet;
+    border-radius: 10px;
+    margin: 0 auto;
+    animation: sign 1s ease-in-out infinite alternate;
+}
+#time{
+    color: rgb(236, 238, 240);
+    text-align: center;
+    padding-top: 42px;
+    
+}
+    @keyframes sign {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #c000e6, 0 0 40px #c000e6, 0 0 50px #c000e6, 0 0 60px #c000e6, 0 0 70px #c000e6;
+        }
+        
+        to {
+          text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #4dffbb, 0 0 50px #ff4d6b, 0 0 60px #ff4d6b, 0 0 70px #ff4da6, 0 0 80px #ff4d5c;
+        }
+    }

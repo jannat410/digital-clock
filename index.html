@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>digital clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: #000;">
+    <div id="clock">
+        <h1 id="time"></h1>
+    </div>
+
+
+    <!-- scripts goes here -->
+    <script type="text/javascript">
+        setInterval(timeFormate, 1000)
+        function timeFormate(){
+            var formate = new Date();
+            var hours = formate.getHours();
+            var minutes = formate.getMinutes();
+            var seconds = formate.getSeconds();
+            const montharray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            var months = montharray[formate.getMonth()];
+            var date = formate.getDate();
+            var day = days[formate.getDay()];
+            var yr = formate.getFullYear();
+
+            // console.log(formate);
+
+            if(hours == 0){
+                hours = 12;
+            }
+            if(hours > 12){
+                hours = hours-12;
+            }
+            if(hours < 10){
+                hours = "0" + hours;
+            }
+            if(minutes < 10){
+                minutes = "0" + minutes;
+            }
+            if(seconds < 10){
+                seconds = "0" + seconds;
+            }
+            var ampm = hours >= 12 ? 'AM' : 'PM';
+            document.getElementById('time').innerHTML = hours + ":" + minutes + ":" + seconds + ' ' + ampm + ", " + day + " " + date + ' ' + months + " " + yr;          
+
+        }
+        
+        
+    </script>
+</body>
+</html>
